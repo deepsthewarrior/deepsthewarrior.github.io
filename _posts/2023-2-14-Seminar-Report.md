@@ -121,7 +121,7 @@ In this section, we will discuss how accurate and consistent the generated expla
   <p class="img-caption">Quality of generated explanations</p>
 </figure>
 
-
+LLMs tend to generate consistent explanation but they are highly likely to be inconsistent. This is a major problem since it can deceive the user into believing something wrong.
 
 ## Calibrating models:
 
