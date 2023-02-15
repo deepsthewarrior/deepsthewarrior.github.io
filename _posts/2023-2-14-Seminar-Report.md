@@ -54,9 +54,12 @@ In NLI tasks, the explanations are usually judged as entailed by/ neutral/ contr
 
 ### Explanations can be added to prompts in two different ways:
 
+Standard few-shot prompting is just using the input prompts without explanation. Explanations can be added to the prompt using two of the following methods:
+
 #### Explain-then-predict:
 
 In this method, the models generate an explanation first and then the prediction is followed. So, the generated label has influence of the generated explanation.
+
 <figure style="text-align:center;">
   <img src="/images/ep.PNG" alt="Prompt" />
   <p class="img-caption">Explain-then-predict</p>
@@ -65,6 +68,7 @@ In this method, the models generate an explanation first and then the prediction
 #### Predict-then-explain:
 
 In this method, the label is generated first and then the explanation is followed. Hence, the generated explanation doesn't have any influence on the output label but the prompt explanation still has an influence on the generated label.
+
 <figure style="text-align:center;">
   <img src="/images/pe.PNG" alt="Prompt" />
   <p class="img-caption">Predict-then-explain</p>
