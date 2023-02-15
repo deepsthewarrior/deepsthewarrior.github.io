@@ -54,7 +54,7 @@ In NLI tasks, the explanations are usually judged as entailed by/ neutral/ contr
 
 ### Explanations can be added to prompts in two different ways:
 
-Standard few-shot prompting is just using the input prompts without explanation. Explanations can be added to the prompt using two of the following methods:
+Standard few-shot in-context learning is using the input prompts without explanation. Explanations can be added to the prompt using two of the following methods:
 
 #### Explain-then-predict:
 
