@@ -45,7 +45,8 @@ The above mentioned prompt examples belongs to SYNTH dataset. SYNTH is a synthet
 
 The above mentioned prompt belongs to ADV HOTPOT dataset. ADV HOTPOT is a adversarial version of the English-language HOTPOT QA dataset and this augmented version is used because InstructGPT gives best performance on the adversarial setting of the dataset. As you can see, the prompt consists of two ground truth supporting statemenst and two adversarial statements.
 
-In NLI tasks, the explanations are usually judged as entailed by/ neutral/ contradicted by based on the given explanations. E-SNLI 
+In NLI tasks, the explanations are usually judged as entailed by/ neutral/ contradicted by based on the given explanations. E-SNLI is an English-language NLI classification dataset. In the below mentioned example prompt, there is a premise and hypothesis and the prediction label is neither with an explanation.
+
 <figure style="text-align:center;">
   <img src="/images/data_prompt2.PNG" alt="Prompt" />
   <p class="img-caption">Example prompt for E-SNLI</p>
