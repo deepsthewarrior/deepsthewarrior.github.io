@@ -62,7 +62,7 @@ In this method, the models generate an explanation first and then the prediction
 
 <figure style="text-align:center;">
   <img src="/images/ep.PNG" alt="Prompt" />
-  <p class="img-caption">Explain-then-predict</p>
+  <p class="img-caption">Example for Explain-then-Predict</p>
 </figure>
 
 #### Predict-then-explain:
@@ -71,7 +71,7 @@ In this method, the label is generated first and then the explanation is followe
 
 <figure style="text-align:center;">
   <img src="/images/pe.PNG" alt="Prompt" />
-  <p class="img-caption">Predict-then-explain</p>
+  <p class="img-caption">Example for Predict-then-Explain</p>
 </figure>
 
 ### Did explanations improve few shot learning? 
