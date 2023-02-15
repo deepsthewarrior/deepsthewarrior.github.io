@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Unreliability of explanations in few shot prompting for textual reasoning
+title: Unreliability of explanations in few-shot prompting for textual reasoning
 ---
 
 This blog is a report on the Learning from Limited Data in NLP. This blog summarizes the methods & results of the paper: <https://arxiv.org/pdf/2205.03401.pdf>. The paper summarizes how explanations can improve the performance of few shot learning in NLP on very large language models and it focuses on two textual reasoning tasks namely, Question Answering(QA) and Natural Language Inference(NLI).
@@ -23,7 +23,8 @@ We have large language models currently such as GPT-3(davinci), OPT, InstructGPT
 In the above example prompt with explanation, we see that the GPT-3 model generates a non factual explanation. The authors prove that these nonfactual explanations can help to calibrate the model. 
 ## What is an explanation?
 
-As discussed above, an explanation is added to every input prompt to improve the performance of the model. But how does this look? And what are the different ways one can add an explanation to the prompt? 
+As discussed above, an explanation is added to every input prompt to improve the performance of the model. Explanation is a summarized in-context view of the input prompt. But how does this look? And what are the different ways one can add an explanation to the prompt?
+
 To answer these questions, we must understand the type of datasets used for this experiments and also their prompt structure.
 The authors in the paper used three different datasets SYNTH, ADV HOTPOT and E-SNLI for the four models mentioned in the above section. The question answering task is performed with SYNTH and ADV HOTPOT, and the NLI task is performed with the E-SNLI dataset.
 
@@ -34,16 +35,17 @@ In Question Answering tasks, usually the prompt consists of bridge statements. T
   <p class="img-caption">Example prompt for SYNTH</p>
 </figure>
 
+The above mentioned prompt examples belongs to SYNTH dataset. SYNTH is a synthetic multi-hop QA dataset which consists of bridge questions with two supporting statements and distractor statements. In the above example, only *Mary hangs out Danielle* and *Danielle is a student* are the two supporting statements paired with many distractor statements. SYNTH always has the prompt structure as "B is profession, A is something of B"
+
+
 <figure style="text-align:center;">
   <img src="/images/data_prompt3.PNG" alt="Prompt" />
   <p class="img-caption">Example prompt for ADV HOTPOT</p>
 </figure>
 
+The above mentioned prompt belongs to ADV HOTPOT dataset. ADV HOTPOT is a adversarial version of the English-language HOTPOT QA dataset and this augmented version is used because InstructGPT gives best performance on the adversarial setting of the dataset. As you can see, the prompt consists of two ground truth supporting statemenst and two adversarial statements.
 
-SYNTH always has the prompt structure as "B is profession, A is something of B"
-
-In NLI tasks, the explanations are usually judged as entailed by/ neutral/ contradicted by based on the given explanations.
-
+In NLI tasks, the explanations are usually judged as entailed by/ neutral/ contradicted by based on the given explanations. E-SNLI 
 <figure style="text-align:center;">
   <img src="/images/data_prompt2.PNG" alt="Prompt" />
   <p class="img-caption">Example prompt for E-SNLI</p>
