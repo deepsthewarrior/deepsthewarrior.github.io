@@ -20,6 +20,7 @@ We have large language models currently such as GPT-3(davinci), OPT, InstructGPT
   <p class="img-caption">Prompting GPT-3 with an explanation</p>
 </figure>
 
+In the above example prompt with explanation, we see that the GPT-3 model generates a non factual explanation. The authors prove that these nonfactual explanations can help to calibrate the model. 
 ## What is an explanation?
 
 As discussed above, an explanation is added to every input prompt to improve the performance of the model. But how does this look? And what are the different ways one can add an explanation to the prompt? 
