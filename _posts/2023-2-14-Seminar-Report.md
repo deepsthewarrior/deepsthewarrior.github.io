@@ -5,7 +5,7 @@ title: Unreliability of explanations in few shot prompting for textual reasoning
 
 This blog is a report on the Learning from Limited Data in NLP. This blog summarizes the methods & results of the paper: <https://arxiv.org/pdf/2205.03401.pdf>. The paper summarizes how explanations can improve the performance of few shot learning in NLP on very large language models and it focuses on two textual reasoning tasks namely, Question Answering(QA) and Natural Language Inference(NLI).
 
-In this blog, I will discuss about the paper (reference link to the paper). We mainly discuss about the various experiments, models and datasets used, and the results generated. We will also discuss how the authors calibrated the models in order to understand the usage of these explanations post hoc.
+We mainly discuss about the various experiments, models and datasets used, and the results generated. We will also discuss how the authors calibrated the models in order to understand the usage of these explanations post hoc.
 
 In the first senction, I will give a short introduction of the paper and the motivation. In the second section, I will explain about the datasets used in the paper along with example prompts with explanations. I will then talk about the quality of generated explanations along with the accuracy results. The authors calibrate the models to get better results which will be discussed in the final section. I will end this blog with a short conclusion about future work and other possibilites.
 
@@ -122,6 +122,8 @@ In this section, we will discuss how accurate and consistent the generated expla
 </figure>
 
 LLMs tend to generate consistent explanation but they are highly likely to be inconsistent. This is a major problem since it can deceive the user into believing something wrong.
+
+The authors also check the reliabilty of explanations and the prediction accuracy. 
 
 ## Calibrating models:
 
