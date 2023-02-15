@@ -105,6 +105,7 @@ A factual explanation is always grounded within the input. It truthfully explain
 ### Consistency: 
 
 The authors followed the definition of a consistent expln(Alon Jacovi and Yoav Goldberg. 2021. Aligning faithful interpretations with their social attribution. Transactions of the Association for Computational Linguistics (TACL), 9:294–310) where a consistent expln always follows/entails the prediction exactly how humans perceive.
+
 <figure style="text-align:center;">
   <img src="/images/consistent.PNG" alt="Prompt" />
   <p class="img-caption">Example for consistent explanation</p>
@@ -112,9 +113,9 @@ The authors followed the definition of a consistent expln(Alon Jacovi and Yoav G
 
 
 #### What is the quality of these generated explanations? 
-(Add accuracy results table)
+
 <figure style="text-align:center;">
-  <img src="/images/bargraph.PNG" alt="Result" />
+  <img src="/images/accuracy.PNG" alt="Result" />
   <p class="img-caption">Quality of generated explanations</p>
 </figure>
 
