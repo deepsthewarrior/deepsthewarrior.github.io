@@ -24,8 +24,7 @@ We have large language models currently such as GPT-3(davinci), OPT, InstructGPT
 
 As discussed above, an explanation is added to every input prompt to improve the performance of the model. But how does this look? And what are the different ways one can add an explanation to the prompt? 
 To answer these questions, we must understand the type of datasets used for this experiments and also their prompt structure.
-The authors in the paper used three different datasets SYNTH, ADV HOTPOT and E-SNLI for the four models mentioned in the above section. 
-
+The authors in the paper used three different datasets SYNTH, ADV HOTPOT and E-SNLI for the four models mentioned in the above section. The question answering task is performed with SYNTH and ADV HOTPOT, and the NLI task is performed with the E-SNLI dataset.
 
 In Question Answering tasks, usually the prompt consists of bridge statements. These can be both supporting and distractor statements.
 
