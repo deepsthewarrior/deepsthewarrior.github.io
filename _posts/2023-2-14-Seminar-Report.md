@@ -3,13 +3,17 @@ layout: post
 title: Unreliability of explanations in few shot prompting for textual reasoning
 ---
 
-This blog is a report about how explanations can improve the performance of few shot learning in NLP on very large language models. It focuses on two textual reasoning task namely, Question Answering(QA) and Natural Language Inference(NLI). 
+This blog is a report on the Learning from Limited Data in NLP. This blog summarizes the methods & results of the paper: <https://arxiv.org/pdf/2205.03401.pdf>. The paper summarizes how explanations can improve the performance of few shot learning in NLP on very large language models and it focuses on two textual reasoning tasks namely, Question Answering(QA) and Natural Language Inference(NLI).
+
+In this blog, I will discuss about the paper (reference link to the paper). We mainly discuss about the various experiments, models and datasets used, and the results generated. We will also discuss how the authors calibrated the models in order to understand the usage of these explanations post hoc.
+
+In the first senction, I will give a short introduction of the paper and the motivation. In the second section, I will explain about the datasets used in the paper along with example prompts with explanations. I will then talk about the quality of generated explanations along with the accuracy results. The authors calibrate the models to get better results which will be discussed in the final section. I will end this blog with a short conclusion about future work and other possibilites.
 
 ## Introduction
 
 Models like GPT-3, OPT and Instruct GPT give their best performance by learning from very few examples in-context. One can let the model explain itself in order to obtain explanations which can be useful to understands how the models work. Textual reasoning tasks like QA and NLP are used enormously for modelling LLMs with few training examples. But does prompting a LLM with explanations improve the overall performance of the model? If yes/no, what is the quality of the model generated explanations itself? Can we judge the quality of these explanations by just one performance metric?
 
-In this blog, I will discuss about the paper (reference link to the paper). We mainly discuss about the various experiments, models and datasets used, and the results generated. We will also discuss how the authors calibrated the models in order to understand the usage of these explanations post hoc.
+
 
 
 ## What is an explanation?
