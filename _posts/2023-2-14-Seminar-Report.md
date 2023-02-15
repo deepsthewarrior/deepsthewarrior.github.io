@@ -184,8 +184,6 @@ Training data sizes vary from 32 to 128.
 </figure>
 
 
-## Summary of the findings:
-
 
 ## Conclusion:
 
