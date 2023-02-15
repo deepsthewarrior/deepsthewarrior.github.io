@@ -112,12 +112,16 @@ The authors followed the definition of a consistent expln(Alon Jacovi and Yoav G
 </figure>
 
 
-#### What is the quality of these generated explanations? 
+### What is the quality of these generated explanations? 
+
+In this section, we will discuss how accurate and consistent the generated explanations. As you can see the table below, only consistency is shown for E-SNLI because checking the factuality of an explanation would require additional knowledge which can't be added to the labels easily. Hence, we have a disconnect between the model and the reasoning in the explanations for E-SNLI. The authors perform the experiment on InstructGPT across three datasets but only on SYNTH for the other three models.
 
 <figure style="text-align:center;">
   <img src="/images/accuracy.PNG" alt="Result" />
   <p class="img-caption">Quality of generated explanations</p>
 </figure>
+
+
 
 ## Calibrating models:
 
