@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Unreliability of explanations in few-shot prompting for textual reasoning
+title: Unreliability of explanations in few shot prompting for textual reasoning
 ---
 
 This blog is a report on the Learning from Limited Data in NLP. This blog summarizes the methods & results of the paper: <https://arxiv.org/pdf/2205.03401.pdf>. The paper summarizes how explanations can improve the performance of few shot learning in NLP on very large language models and it focuses on two textual reasoning tasks namely, Question Answering(QA) and Natural Language Inference(NLI).
