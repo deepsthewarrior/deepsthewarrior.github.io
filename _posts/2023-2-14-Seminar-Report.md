@@ -13,20 +13,19 @@ In the first senction, I will give a short introduction of the paper and the mot
 
 Models like GPT-3, OPT and Instruct GPT give their best performance by learning from very few examples in-context. One can let the model explain itself in order to obtain explanations which can be useful to understands how the models work. Textual reasoning tasks like QA and NLP are used enormously for modelling LLMs with few training examples. But does prompting a LLM with explanations improve the overall performance of the model? If yes/no, what is the quality of the model generated explanations itself? Can we judge the quality of these explanations by just one performance metric?
 
-
-
-
-## What is an explanation?
-
-Now, lets first understand what an explanation along with the prompt actually looks like.
+We have large language models currently such as GPT-3(davinci), OPT, InstructGPT(text-davinci-001) and text-danvinci-002 which are known to have an effective performance for textual reasoning tasks. 
 
 <figure style="text-align:center;">
   <img src="/images/intro.PNG" alt="Explanation" />
   <p class="img-caption">Prompting GPT-3 with an explanation</p>
 </figure>
 
-In this paper, they have used three datasets namely SYNTH, ADV HOTPOT and E-SNLI used on four different models namely GPT-3(davinci), OPT, InstructGPT(text-davinici-001) and text-davinci-002. 
-Now that we understood what an explanation is, let's see how the explanation looks like for two different NLP tasks.
+## What is an explanation?
+
+As discussed above, an explanation is added to every input prompt to improve the performance of the model. But how does this look? And what are the different ways one can add an explanation to the prompt? 
+To answer these questions, we must understand the type of datasets used for this experiments and also their prompt structure.
+The authors in the paper used three different datasets SYNTH, ADV HOTPOT and E-SNLI for the four models mentioned in the above section. 
+
 
 In Question Answering tasks, usually the prompt consists of bridge statements. These can be both supporting and distractor statements.
 
