@@ -146,13 +146,19 @@ This framework is used for the ADV HOTPOT and E-SNLI datasets. Lets now see how 
 ### Framework:
 Unlike classical calibration methods(provide reference) which use affine transformation on the probabilities only.(add the equation)
 
-The authors have improvised the classical method by adding an extra term 'v' which is a scalar value that describes the factuality of an explanation: p-^ = softmax(W[p,v]+b) and p_^ is the tuned probabilities. 
-
+The authors have improvised the classical method by adding an extra term 'v' which is a scalar value that describes the factuality of an explanation: p&#770;
+ = softmax(W[p; v] + b) where p&#770; is the tuned probabilities, v is the factor that incorporates the factuality assessment of an explanation and p is the vector of predicted probailities and it is associated with the class label of NLI/ probability score of the predicted answer in QA task. 
 
 ### Approximating factuality: 
-Authors have used lexical overlap to approximate the factuality of an explanation. They have concluded that lexical overlap worked well for all the tasks.
+Authors have used lexical overlap to approximate the factuality of an explanation which worked well for all the tasks.
+
 #### For ADV HOTPOT
-We have seen that ADV HOTPOT dataset has two sentences in an explanation(add an example). 
+We have seen that ADV HOTPOT dataset has two sentences in an explanation. For the two sentences E^(1) and E^(2), an explanation &epsilon; is generated. For each explanation E^(i), there are (e~1, e~2,..e~i) tokens. Similarly, for P=(P^(1), P^(2), P^(3), P^(4)) are context paragraphs and for each context paragraph P^(i), we have (p~1, p~2,...p~i) tokens. 
+
+Now, we can calculate the factuality of an explanation E^(i) as:
+
+
+
 Add the equations and explain the math little
 
 #### For E-SNLI
