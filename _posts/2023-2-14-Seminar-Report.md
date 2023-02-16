@@ -155,11 +155,8 @@ Authors have used lexical overlap to approximate the factuality of an explanatio
 #### For ADV HOTPOT
 We have seen that ADV HOTPOT dataset has two sentences in an explanation. For the two sentences E<sup>(1)</sup> and E<sup>(2)</sup>, an explanation &epsilon; is generated. For each explanation E<sup>(i)</sup>, there are (e<sub>1</sub>, e<sub>2</sub>,..e<sub>i</sub>) tokens. Similarly, for P=(P<sup>(1)</sup>, P<sup>(2)</sup>, P<sup>(3)</sup>, P<sup>(4)</sup>) are context paragraphs and for each context paragraph P<sup>(i)</sup>, we have (p<sub>1</sub>, p<sub>2</sub>,...p<sub>i</sub>) tokens. 
 
-Now, we can calculate the factuality of an explanation E^(i) as:
+Now, we can calculate the factuality of an explanation E<sup>(i)</sup> as: v(E<sup>(i)</sup>) = 
 
-
-
-Add the equations and explain the math little
 
 #### For E-SNLI
 As we have seen that E-SNLI has a premise and hypothesis situation, so it does not involve the factuality concept.
