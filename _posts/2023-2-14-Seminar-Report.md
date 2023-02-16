@@ -192,9 +192,7 @@ Authors only calibrated P-E since it is more effective than E-P on E-SNLI and tr
 
 The table above summarizes the results for the calibrated model on E-SNLI.The results are given by the standard deviation for the 5 groups of training samples used. Again, P-E+ExplCal outperforms all other models when 128 training samples are used. Not only with 128, P-E+ExplCal acheives a better result even with 64 labels whereas for the other models the results saturate at 96 labels already. For the few-shot(NN) model, only the results for 128 labels is given since it has a very bad performance for lower number of samples. 
 
-## Conclusion:
-
-
+## Risk of LLMs using explanations:
 
 
 
