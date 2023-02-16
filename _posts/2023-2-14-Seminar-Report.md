@@ -125,15 +125,17 @@ LLMs tend to generate consistent explanation but they are highly likely to be in
 
 The authors also check the reliabilty of explanations and the prediction accuracy. For SYNTH dataset, a non-reliable explanation usually means an incorrect prediction across all four LLMs. For ADV HOTPOT, factuality for InstructGPT's performance was around 80.0%. Now we understand that LLMs kind of hallucinate explanations but this gives a chance to spot where the LLM's reasoning is failing. In order to discover the connection between the reliability of an explanation and the accuracy of its prediction, we need to calibrate the models.
 
-## Calibrating models:
+## Calibrating In-context learning using explanations:
 
-From the above tabular results we see that its possible to automate the process of using the factuality of an explanation to generate the corresponding prediction.
+From the above tabular results we see that its possible to automate the process of using the factuality of an explanation to generate the corresponding prediction. But can we automate this process?
 
-The authors of this paper use InstructGPT as their base model for performance and calibration. This is because, during the time of this experiment InstructGPT was on of the most powerful models which had a significant room for development. So, now in the calibration process the authors calibrate InstructGPT model on all three datatsets and achieve different set of performances,
+The authors of this paper use InstructGPT as their base model for performance and calibration. This is because, during the time of this experiment InstructGPT was on of the most powerful models which had a significant room for development. So, now in the calibration process the authors calibrate InstructGPT model on all three datatsets and achieve an effective overall performance. 
+
+Calibration was very easy to achieve on SYNTH since it has a perfectly controlled setting in the dataset. For ADV HOTPOT and E-SNLI, authors have used lexical matching to approximate semantic matching to reflect factuality. 
 
 Now lets see one-by-one for three datasets on how to calibrate.
 
-### Calibrating SYNTH:
+### Improving SYNTH:
 The authors claim to achieve very good results on SYNTH dataset by calibration. They also claim that achieving the results was very easy on this dataset. 
 As we already saw that P-E performs well on SYNTH, the authors calibrate and provide the results only for this setting. 
 
