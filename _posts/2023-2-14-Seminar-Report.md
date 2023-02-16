@@ -153,7 +153,7 @@ The authors have improvised the classical method by adding an extra term 'v' whi
 Authors have used lexical overlap to approximate the factuality of an explanation which worked well for all the tasks.
 
 #### For ADV HOTPOT
-We have seen that ADV HOTPOT dataset has two sentences in an explanation. For the two sentences $E^(1)$ and E^(2), an explanation &epsilon; is generated. For each explanation E^(i), there are (e~1, e~2,..e~i) tokens. Similarly, for P=(P^(1), P^(2), P^(3), P^(4)) are context paragraphs and for each context paragraph P^(i), we have (p~1, p~2,...p~i) tokens. 
+We have seen that ADV HOTPOT dataset has two sentences in an explanation. For the two sentences E^(1) and E^(2), an explanation &epsilon; is generated. For each explanation E^(i), there are (e<sub>1</sub>, e<sub>2</sub>,..e<sub>i</sub>) tokens. Similarly, for P=(P^(1), P^(2), P^(3), P^(4)) are context paragraphs and for each context paragraph P^(i), we have (p<sub>1</sub>, p<sub>2</sub>,...p<sub>i</sub>) tokens. 
 
 Now, we can calculate the factuality of an explanation E^(i) as:
 
