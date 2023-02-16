@@ -123,7 +123,7 @@ In this section, we will discuss how accurate and consistent the generated expla
 
 LLMs tend to generate consistent explanation but they are highly likely to be inconsistent. This is a major problem since it can deceive the user into believing something wrong.
 
-The authors also check the reliabilty of explanations and the prediction accuracy. 
+The authors also check the reliabilty of explanations and the prediction accuracy. For SYNTH dataset, a non-reliable explanation usually means an incorrect prediction across all four LLMs. For ADV HOTPOT, factuality for InstructGPT's performance was around 80.0%. Now we understand that LLMs kind of hallucinate explanations but this gives a chance to spot where the LLM's reasoning is failing. In order to discover the connection between the reliability of an explanation and the accuracy of its prediction, we need to calibrate the models.
 
 ## Calibrating models:
 
