@@ -138,9 +138,9 @@ Now lets see one-by-one for three datasets on how to calibrate.
 ### Improving SYNTH:
 The authors claim to achieve very good results on SYNTH dataset by calibration. They also claim that achieving the results was very easy on this dataset. 
 As we already saw that P-E performs well on SYNTH, the authors calibrate and provide the results only for this setting. 
+As we know that the prompt structure for SYNTH dataset is *[B is profession, A verb B]* which can be easily split into two sentences. An explanation is factual if and only if each of the two sentences match one sentence in context. 
 
-They have observed that the accuracy increased from 52.4 to 74.8%
-No model could achieve this performance when trained even with 16 training examples
+They have observed that the accuracy increased from 52.4 to 74.8%. No model could achieve this performance when trained even with 16 training examples
 
 ## Learning based calibration framework:
 ### Framework:
