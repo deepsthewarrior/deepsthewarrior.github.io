@@ -182,7 +182,8 @@ In tha table below, AUC scores on ADV HOTPOT are reported on different training 
 In the AUC score graph, it is evident that E-P+ExplCal outperforms all other models. E-P+Zhang performs well but it couldn't reach the performance of E-P+ExplCal. The uncalibrated E-P also does not really perform well.
 
 ### Calibrating E-SNLI:
-Training data sizes vary from 32 to 128.
+
+Authors only calibrated P-E since it is more effective than E-P on E-SNLI and training data sizes vary from 32 to 128. To have an effective comparision of the performance, RoBERTa, few-shot(NN), few-shot+ProbCal and P-E+Zhang models are used. 
 
 <figure style="text-align:center;">
   <img src="/images/res_esnli.PNG" alt="Result" />
