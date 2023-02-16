@@ -183,14 +183,14 @@ In the AUC score graph, it is evident that E-P+ExplCal outperforms all other mod
 
 ### Calibrating E-SNLI:
 
-Authors only calibrated P-E since it is more effective than E-P on E-SNLI and training data sizes vary from 32 to 128. To have an effective comparision of the performance, RoBERTa, few-shot(NN), few-shot+ProbCal and P-E+Zhang models are used. 
+Authors only calibrated P-E since it is more effective than E-P on E-SNLI and training data sizes vary from 32 to 128. To have an effective comparision of the performance, RoBERTa, few-shot(NN), few-shot+ProbCal and P-E+Zhang models are used. Here, 32 explanation labels were used along with the training data labels.
 
 <figure style="text-align:center;">
   <img src="/images/res_esnli.PNG" alt="Result" />
   <p class="img-caption">Results for E-SNLI after calibration</p>
 </figure>
 
-
+The table above summarizes the results for the calibrated model on E-SNLI.The results are given by the standard deviation for the 5 groups of training samples used. Again, P-E+ExplCal outperforms all other models when 128 training samples are used. Not only with 128, P-E+ExplCal acheives a better result even with 64 labels whereas for the other models the results saturate at 96 labels already. For the few-shot(NN) model, only the results for 128 labels is given since it has a very bad performance for lower number of samples. 
 
 ## Conclusion:
 
