@@ -153,14 +153,12 @@ The authors have improvised the classical method by adding an extra term 'v' whi
 Authors have used lexical overlap to approximate the factuality of an explanation which worked well for all the tasks.
 
 #### For ADV HOTPOT
-We have seen that ADV HOTPOT dataset has two sentences in an explanation. For the two sentences E<sup>(1)</sup> and E<sup>(2)</sup>, an explanation &epsilon; is generated. For each explanation E<sup>(i)</sup>, there are (e<sub>1</sub>, e<sub>2</sub>,..e<sub>i</sub>) tokens. Similarly, for P=(P<sup>(1)</sup>, P<sup>(2)</sup>, P<sup>(3)</sup>, P<sup>(4)</sup>) are context paragraphs and for each context paragraph P<sup>(i)</sup>, we have (p<sub>1</sub>, p<sub>2</sub>,...p<sub>i</sub>) tokens. 
+We have seen that ADV HOTPOT dataset has two sentences in an explanation. For the two sentences E<sup>(1)</sup> and E<sup>(2)</sup>, an explanation &epsilon; is generated. For each explanation E<sup>(i)</sup>, there are (e<sub>1</sub>, e<sub>2</sub>,..e<sub>i</sub>) tokens. Similarly, for P=(P<sup>(1)</sup>, P<sup>(2)</sup>, P<sup>(3)</sup>, P<sup>(4)</sup>) are context paragraphs and for each context paragraph P<sup>(i)</sup>, we have (p<sub>1</sub>, p<sub>2</sub>,...p<sub>i</sub>) tokens. Using these parameters, factuality of an explanation v(E<sup>(i)</sup>) can be calculated.
 
-Now, we can calculate the factuality of an explanation E<sup>(i)</sup> as: v(E<sup>(i)</sup>) = 
-
+This factuality can be defined as the maximum number of overlapping tokens over all paragraphs, normalised by number of tokens.
 
 #### For E-SNLI
-As we have seen that E-SNLI has a premise and hypothesis situation, so it does not involve the factuality concept.
-Describe the math equations and explain little
+As we have seen that E-SNLI has a premise and hypothesis situation, so it does not involve the factuality concept. Assuming E = (e<sub>1</sub>, e<sub>2</sub>,...) is the explanation and P = (p<sub>1</sub>, p<sub>2</sub>,...) is the premise, score of the explanation can be calculated as v(E). 
 
 The more the explanation overlaps with the premise, the higher the factuality.
 
