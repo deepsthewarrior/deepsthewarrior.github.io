@@ -163,25 +163,27 @@ As we have seen that E-SNLI has a premise and hypothesis situation, so it does n
 The more the explanation overlaps with the premise, the higher the factuality.
 
 ### Calibrating ADV HOTPOT:
-Add reference for setup theory. Selective QA used .To check the quality of calibration, the authors use coverage-accuracy-curve plot. A better calibrated model must be able to pick the questions it can perform best on, which gives higher AUC.
+Add reference for setup theory. Selective QA used .To check the quality of calibration, the authors use coverage-accuracy-curve plot. A better calibrated model must be able to pick the questions it can perform best on, which gives higher AUC. As we saw earlier, E-P performs better than P-E on ADV HOTPOT but on the calibrated model P-E also performs better. Training data size is 6,32 and 64 and the authors show the results averaged from 5 different trials of different datasets.
 
-As we saw earlier, E-P performs better than P-E on ADV HOTPOT. Training data size is 6,32 and 64 and the authors show the results averaged from 5 different trials of different datasets.
+Lets now discuss the results on ADV HOTPOT after calibration:
 
-### Results:
 <figure style="text-align:center;">
   <img src="/images/res_adv.PNG" alt="Result" />
   <p class="img-caption">Results for ADV HOTPOT after calibration</p>
 </figure>
+
+In tha table below, AUC scores on ADV HOTPOT are reported on different training sample labels and 6 explanations. AUC score can be used to evaluate how well the model is calibrated. E-P+Zhang model is used as a reference which is a supervised calibrated model that uses h(CLS representation) as a feature in the calibrator. E-P+ExplCal outperforms both E-P+Zhang and few-shot. We can also observe that just using 32 labels can give a higher AUC score on E-P+ExplCal. 
 
 <figure style="text-align:center;">
   <img src="/images/auc.PNG" alt="Result" />
   <p class="img-caption">AUC scores for ADV HOTPOT</p>
 </figure>
 
+In the AUC score graph, it is evident that E-P+ExplCal outperforms all other models. E-P+Zhang performs well but it couldn't reach the performance of E-P+ExplCal. The uncalibrated E-P also does not really perform well.
+
 ### Calibrating E-SNLI:
 Training data sizes vary from 32 to 128.
 
-## Results:
 <figure style="text-align:center;">
   <img src="/images/res_esnli.PNG" alt="Result" />
   <p class="img-caption">Results for E-SNLI after calibration</p>
