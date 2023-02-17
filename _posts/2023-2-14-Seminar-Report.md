@@ -17,7 +17,7 @@ We have large language models currently such as GPT-3(davinci), OPT, InstructGPT
 
 <figure style="text-align:center;">
   <img src="/images/intro.PNG" alt="Explanation" />
-  <p class="img-caption">Prompting GPT-3 with an explanation(Source: <https://arxiv.org/pdf/2205.03401.pdf>)</p>
+  <p class="img-caption">Prompting GPT-3 with an explanation(Source: <https://arxiv.org/pdf/2205.03401.pdf>) </p>
 </figure>
 
 In the above example prompt with explanation, we see that the GPT-3 model generates a non factual explanation. The authors prove that these nonfactual explanations can help to calibrate the model. 
