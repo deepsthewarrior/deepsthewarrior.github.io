@@ -32,7 +32,7 @@ In Question Answering tasks, usually the prompt consists of bridge statements. T
 
 <figure style="text-align:center;">
   <img src="/images/data_prompt.PNG" alt="Prompt" />
-  <p class="img-caption">Example prompt for SYNTH</p>
+  <p class="img-caption">Example prompt for SYNTH(Source: <https://arxiv.org/pdf/2205.03401.pdf>)</p>
 </figure>
 
 The above mentioned prompt examples belongs to SYNTH dataset. SYNTH is a synthetic multi-hop QA dataset which consists of bridge questions with two supporting statements and distractor statements. In the above example, only *Mary hangs out Danielle* and *Danielle is a student* are the two supporting statements paired with many distractor statements. SYNTH always has the prompt structure as "B is profession, A is something of B"
@@ -40,7 +40,7 @@ The above mentioned prompt examples belongs to SYNTH dataset. SYNTH is a synthet
 
 <figure style="text-align:center;">
   <img src="/images/data_prompt3.PNG" alt="Prompt" />
-  <p class="img-caption">Example prompt for ADV HOTPOT</p>
+  <p class="img-caption">Example prompt for ADV HOTPOT(Source: <https://arxiv.org/pdf/2205.03401.pdf>)</p>
 </figure>
 
 The above mentioned prompt belongs to ADV HOTPOT dataset. ADV HOTPOT is a adversarial version of the English-language HOTPOT QA dataset and this augmented version is used because InstructGPT gives best performance on the adversarial setting of the dataset. As you can see, the prompt consists of two ground truth supporting statemenst and two adversarial statements.
@@ -49,7 +49,7 @@ In NLI tasks, the explanations are usually judged as entailed by/ neutral/ contr
 
 <figure style="text-align:center;">
   <img src="/images/data_prompt2.PNG" alt="Prompt" />
-  <p class="img-caption">Example prompt for E-SNLI</p>
+  <p class="img-caption">Example prompt for E-SNLI(Source: <https://arxiv.org/pdf/2205.03401.pdf>)</p>
 </figure>
 
 ### Explanations can be added to prompts in two different ways:
@@ -62,7 +62,7 @@ In this method, the models generate an explanation first and then the prediction
 
 <figure style="text-align:center;">
   <img src="/images/ep.PNG" alt="Prompt" />
-  <p class="img-caption">Example for Explain-then-Predict</p>
+  <p class="img-caption">Example for Explain-then-Predict(Source: <https://arxiv.org/pdf/2205.03401.pdf>)</p>
 </figure>
 
 In the prompt given above we can see that the explanation *Because Danielle is a student and Mary hangs out with Danielle* is generated first and then the label is given as *Mary*.
@@ -73,7 +73,7 @@ In this method, the label is generated first and then the explanation is followe
 
 <figure style="text-align:center;">
   <img src="/images/pe.PNG" alt="Prompt" />
-  <p class="img-caption">Example for Predict-then-Explain</p>
+  <p class="img-caption">Example for Predict-then-Explain(Source: <https://arxiv.org/pdf/2205.03401.pdf>)</p>
 </figure>
 
 Here we see that the explanation *because not every person is a girl* is generated after the label has been predicted.
@@ -85,7 +85,7 @@ The table below summarizes the results for all the three datasets:
 
 <figure style="text-align:center;">
   <img src="/images/exp1.PNG" alt="Prompt" />
-  <p class="img-caption">Example for nonfactual explanation</p>
+  <p class="img-caption">Example for nonfactual explanation(Source: <https://arxiv.org/pdf/2205.03401.pdf>)</p>
 </figure>
 
 We see that the performance has very small to moderate change on three models except for text-danvinci-002 which achieved better performance on E-P than few shot prompting. On InstructGPT, both QA datasets improve the performance on E-P and for NLI task, E-SNLI improves the performance on P-E. We can also observe that the performance of P-E over all three datasets is very inconsistent.
@@ -99,7 +99,7 @@ A factual explanation is always grounded within the input. It truthfully explain
 
 <figure style="text-align:center;">
   <img src="/images/factual.PNG" alt="Prompt" />
-  <p class="img-caption">Example for nonfactual explanation</p>
+  <p class="img-caption">Example for nonfactual explanation(Source: <https://arxiv.org/pdf/2205.03401.pdf>)</p>
 </figure>
 
 ### Consistency: 
@@ -108,7 +108,7 @@ The authors followed the definition of a consistent expln(Alon Jacovi and Yoav G
 
 <figure style="text-align:center;">
   <img src="/images/consistent.PNG" alt="Prompt" />
-  <p class="img-caption">Example for consistent explanation</p>
+  <p class="img-caption">Example for consistent explanation(Source: <https://arxiv.org/pdf/2205.03401.pdf>)</p>
 </figure>
 
 
@@ -118,7 +118,7 @@ In this section, we will discuss how accurate and consistent the generated expla
 
 <figure style="text-align:center;">
   <img src="/images/accuracy.PNG" alt="Result" />
-  <p class="img-caption">Quality of generated explanations</p>
+  <p class="img-caption">Quality of generated explanations(Source: <https://arxiv.org/pdf/2205.03401.pdf>)</p>
 </figure>
 
 LLMs tend to generate consistent explanation but they are highly likely to be inconsistent. This is a major problem since it can deceive the user into believing something wrong.
@@ -169,14 +169,14 @@ Lets now discuss the results on ADV HOTPOT after calibration:
 
 <figure style="text-align:center;">
   <img src="/images/res_adv.PNG" alt="Result" />
-  <p class="img-caption">Results for ADV HOTPOT after calibration</p>
+  <p class="img-caption">Results for ADV HOTPOT after calibration(Source: <https://arxiv.org/pdf/2205.03401.pdf>)</p>
 </figure>
 
 In tha table below, AUC scores on ADV HOTPOT are reported on different training sample labels and 6 explanations. AUC score can be used to evaluate how well the model is calibrated. E-P+Zhang model is used as a reference which is a supervised calibrated model that uses h(CLS representation) as a feature in the calibrator. E-P+ExplCal outperforms both E-P+Zhang and few-shot. We can also observe that just using 32 labels can give a higher AUC score on E-P+ExplCal. 
 
 <figure style="text-align:center;">
   <img src="/images/auc.PNG" alt="Result" />
-  <p class="img-caption">AUC scores for ADV HOTPOT</p>
+  <p class="img-caption">AUC scores for ADV HOTPOT(Source: <https://arxiv.org/pdf/2205.03401.pdf>)</p>
 </figure>
 
 In the AUC score graph, it is evident that E-P+ExplCal outperforms all other models. E-P+Zhang performs well but it couldn't reach the performance of E-P+ExplCal. The uncalibrated E-P also does not really perform well.
@@ -187,7 +187,7 @@ Authors only calibrated P-E since it is more effective than E-P on E-SNLI and tr
 
 <figure style="text-align:center;">
   <img src="/images/res_esnli.PNG" alt="Result" />
-  <p class="img-caption">Results for E-SNLI after calibration</p>
+  <p class="img-caption">Results for E-SNLI after calibration(Source: <https://arxiv.org/pdf/2205.03401.pdf>)</p>
 </figure>
 
 The table above summarizes the results for the calibrated model on E-SNLI.The results are given by the standard deviation for the 5 groups of training samples used. Again, P-E+ExplCal outperforms all other models when 128 training samples are used. Not only with 128, P-E+ExplCal acheives a better result even with 64 labels whereas for the other models the results saturate at 96 labels already. For the few-shot(NN) model, only the results for 128 labels is given since it has a very bad performance for lower number of samples. 
