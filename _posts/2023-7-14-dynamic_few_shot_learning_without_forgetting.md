@@ -12,7 +12,7 @@ Attention mechanism helps in obtaining better performance when the novel class s
 The weight vectors from the previous contribution cannot be added to the classifier, the base class weights and the novel class weights are learned with different momentum in SGD. Thus the logits are not on the same scale, might not allow the learning of different categories in a uniform manner.   Hence, the classification scores is calculated as the cosine similarity function between input features and the generated weight vectors.
 
 <figure style="text-align:center;">
-  <img src="/images/images_1.png" alt="Result" />
+  <img src="/images/images_1.PNG" alt="Result" />
   <p class="img-caption"> Architecture (Source: <a href="https://arxiv.org/pdf/1804.09458.pdf">https://arxiv.org/pdf/1804.09458.pdf</a>)</p>
 </figure>
 
