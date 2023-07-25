@@ -1,5 +1,5 @@
 #### Introduction:
-Point Cloud data is how physical world's representation when we use sensors like LiDAR scanners, depth cameras, Photogrammetry(not a sensor), ToF Cameras. They contain x,y,z co-ordinate information of a point inside a Point Cloud. Developing deep learning models for Point Clouds is by itself a challenging task. We will discuss PointNet++ which is one of the pioneering works in this area.  PointNet++ was inspired from PointNet which is a prior work in this area. In order to understand PointNet++, we need to get hang of PointNet and the problems that it tried to solve.
+Point Cloud data is how physical world is represented when we use sensors like LiDAR scanners, depth cameras, Photogrammetry(not a sensor), ToF Cameras. They contain x,y,z co-ordinate information of a point inside a Point Cloud. Developing deep learning models for Point Clouds is by itself a challenging task. We will discuss PointNet++ which is one of the pioneering works in this area.  PointNet++ was inspired from PointNet which introduced how to encode arbitary number of points to a fixed dimensional output representation. In order to understand PointNet++, we need to get hang of PointNet and the problems that it tried to solve.
 
 **Properties of PointSet:**
 Point set is a subset of data in a Point Cloud.
@@ -12,7 +12,7 @@ Point set is different from image pixels or volumetric grid's voxels that it has
 **Interaction among Points**:
 Learning the neighboring points near a given point, help in capturing the local contextual information, which helps the model to learn better. Similar characteristics is needed for image based deep learning models also.
 `To solve this, PointNet concatenates the extracted global point features with each of the local point features, inside the segmentation Network. Thus being aware of both local and global information.`
-![[Screenshot from 2023-07-15 22-51-44.png]]
+
 
 <figure style="text-align:center;">
   <img src="/images/architecture.PNG" alt="PointNet architecture" />
@@ -26,8 +26,6 @@ The model should be able to learn even if the point cloud undergoes rotation, tr
 As mentioned above, PointNet does not efficiently capture the local features like how CNN  does in an hierarchical manner, with neighborhood information. In a CNN a set of neighbouring features contribute to each feature at the higher level.  Well, in PointNet the local features are only mapped and concatenated to the corresponding global features, not efficiently learning the neighborhood information.
 
 PointNet++ groups the points based on distance metric and extracts the features from grouped points. 
-
-![[Pasted image 20230716114100.png]]
 <figure style="text-align:center;">
   <img src="/images/receptive.PNG" alt="Receptive Field of CNN" />
   <p class="img-caption"> CNN at each level takes in the neighborhood points for calculating features at each level(Source: <a href="(https://www.baeldung.com/cs/cnn-receptive-field-size)">(https://www.baeldung.com/cs/cnn-receptive-field-size)/</a>)</p>
@@ -41,6 +39,7 @@ Input to the set abstraction Operation is N x (d+C) matrix, where N is the numbe
 Now, let us see what each Set abstraction layer is composed of:
 1. **Sampling Layer:**
    Sampling operation selects m points from n given input points. Here we use Farthest point Sampling as the sampling algorithm. First it selects a point randomly and selects the second point which farthest away from the first point in terms of distance metric. The selected points are a part of selected point set. Then it selects the 3rd point which far away from points in the selected point set. The selected point now constitutes a part of selected point set. Thus, it proceeds until the selected point set has m points. 
+   
 <figure style="text-align:center;">
   <img src="/images/fps.PNG" alt="Farthest Point Sampling of a Chair object" />
   <p class="img-caption">Blue dots represent the raw points, Violet dots represents the sampled points(Source: <a href="https://arxiv.org/pdf/1812.01659.pdf">https://arxiv.org/pdf/1812.01659.pdf</a>)</p>
@@ -53,7 +52,6 @@ Now, let us see what each Set abstraction layer is composed of:
   *Output:* Point Set groups N' x K x (d+C) where K is the number of neighborhood points to a centroid.
   
    
-![[Screenshot from 2023-07-16 12-29-25.png]] 
 Source:https://link.springer.com/chapter/10.1007/978-3-030-61864-3_27
 
 <figure style="text-align:center;">
@@ -138,8 +136,6 @@ return new_xyz, new_points, idx, grouped_xyz
    The co-ordinates of the neighboring points are changed to centroid as its origin from the global co-ordinate system. In other words each point in the local region will have its co-ordinates depicting how far it is from the centeroid rather than how far it is from the global origin.
 
    The property of PointNet is that given any number of points as input(K points in our case), it gives *1 x C'* dimensional vector as output. In our context, note that K can be a varying number for each local region. Thus for *N'* local regions, *N' x (d+C')* as the output. 
-
-![[Screenshot from 2023-07-16 15-28-11.png]]
 
 <figure style="text-align:center;">
   <img src="/images/pointnet.PNG" alt="PointNet++ architecture" />
@@ -239,8 +235,6 @@ We adjust the Set Abstraction operation accordingly to facilitate the density ad
 ##### Multi-Scale Grouping:
 During grouping operation, we apply ball query of different Radius around a centroid. We then seperately learn features on different scales. In the end we concatenate them to obtain Multi Scale features. 
 
-![[Screenshot from 2023-07-16 14-29-44.png]]
-
 <figure style="text-align:center;">
   <img src="/images/msg.PNG" alt="Multi Scale Groupping" />
   <p class="img-caption">(Source: <a href="http://stanford.edu/~rqi/pointnet2/">http://stanford.edu/~rqi/pointnet2/</a>)</p>
@@ -253,7 +247,6 @@ In Multi Resolution grouping we concatenate 2 vectors. The first one learns from
 When the point cloud is sparse, first vector is weighed low. This owing to the fact that the first vector has poor sampling as it is being recursively sampled on sparse regions. In this case the second vector has sampled more points.
 
 When the point cloud is dense the first vector is weighed high, as the features learnt have fine contextual information due to recursive learning like the receptive field of CNN. 
-![[Screenshot from 2023-07-16 14-43-53.png]]
 
 <figure style="text-align:center;">
   <img src="/images/msr.PNG" alt="Multi Resolution Groupping" />
@@ -267,16 +260,12 @@ This takes us to the end of feature extractor part.
 For segmentation tasks, we need to get point features for all raw points. Feature propagation is used to propagate points using interpolation and skip connections. As given in the Fig representing the architecture, the output points after a Set Abstraction(SA) operation are interpolated to N the dimension of N points which were input to the SA operation. Then the original N features are also concatenated in a skip link concatenation manner. This loosely similar to the U-Net architecture, where we reconstruct and also concatenate the features from the encoder to the corresponding levels in the decoder. 
 Then the concatenated features are fed to Unit PointNet containing Conv layers. 
 Interpolation, concatenation and Unit PointNet combine together to form a block. Each block is repeated multiple times until we reach the size of the raw point clouds, on which label is generated pointwise by the unit pointnet.
-
-![[Screenshot from 2023-07-16 17-01-54.png]]
 <figure style="text-align:center;">
   <img src="/images/segmentation.PNG" alt="Segmentation Task" />
   <p class="img-caption"> Interpolate, Skip link concatenation, Unit PointNet form (Source: <a href="http://stanford.edu/~rqi/pointnet2/">http://stanford.edu/~rqi/pointnet2/</a>)</p>
 </figure>
 
 For Classification task, we send the extracted features into the Fully Connected Layers to obtain class scores.
-
-![[Screenshot from 2023-07-16 17-02-31.png]]
 
 <figure style="text-align:center;">
   <img src="/images/classification.PNG" alt="Segmentation Task" />
