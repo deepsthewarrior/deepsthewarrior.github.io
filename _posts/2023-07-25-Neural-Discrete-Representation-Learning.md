@@ -1,3 +1,6 @@
+#### Introduction:
+Generative modelling has picked up immense popularity, in the recent days due to meaningful content generation capabilities. This paper is a seminal work which shifted from continuous latent representation to discrete latent representation. It addresses the drawbacks of traditional methods like posterior collapse, high variance of latent space.
+
 #### Posterior Collapse:
 Posterior collapse occurs when the encoder fails to capture meaningful information about the input data in the latent variables. This can happen when the VAE is trained with very strong regularization or when the encoder and decoder networks are too powerful, making it easier for the VAE to rely solely on the decoder to reconstruct the data rather than learning useful representations in the latent space.
 
