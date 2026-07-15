@@ -2,17 +2,310 @@
 layout: default
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+<article class="page portfolio">
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-avatar" aria-hidden="true">DM</span>
+      <h1>Deepika Rani KM</h1>
+      <p class="hero-tagline">Building perception, planning &amp; VLA systems for autonomous parking and robotics</p>
+      <p class="hero-summary">
+        I work on Vision-Language-Action systems, transformer-based perception, and diffusion / flow-matching
+        planners for autonomous driving and robotics — spanning BEV multi-camera perception, 3D Gaussian scene
+        representations, NeRFs, and safety-critical embedded deployment. Published researcher with a pending
+        patent application.
+      </p>
+      <p class="hero-links">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/deepika-rani-k-2054a984">LinkedIn</a>
+        <a class="btn btn-ghost" href="{{ site.baseurl }}/blog/">Blog</a>
+      </p>
+    </div>
+  </section>
 
-      <div class="entry">
-        {{ post.excerpt }}
+  <nav class="section-nav">
+    <a href="#expertise">Expertise</a>
+    <a href="#projects">Projects</a>
+    <a href="#background">Background</a>
+    <a href="#publications">Publications</a>
+    <a href="#education">Education</a>
+  </nav>
+
+  <section class="page-section reveal" id="expertise">
+    <h2>Expertise</h2>
+
+    <div class="skill-group">
+      <h4>Perception &amp; Planning</h4>
+      <ul class="tag-list">
+        <li>Vision-Language-Action (VLA) Models</li>
+        <li>Reinforcement Learning (GRPO)</li>
+        <li>Flow-Matching / Diffusion Decoders</li>
+        <li>DETR / Deformable DETR</li>
+        <li>BEV Feature Lifting (LSS, BEVFormer, SimpleBEV)</li>
+        <li>3D Gaussian Splatting</li>
+        <li>NeRF</li>
+        <li>Object Detection &amp; Segmentation</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <h4>ML &amp; Training</h4>
+      <ul class="tag-list">
+        <li>PyTorch</li>
+        <li>Python</li>
+        <li>VLA/VLM Fine-Tuning (LoRA)</li>
+        <li>Multi-Task Learning</li>
+        <li>Distributed Training (SLURM)</li>
+        <li>torch.compile Profiling</li>
+      </ul>
+    </div>
+
+    <div class="skill-group">
+      <h4>Deployment</h4>
+      <ul class="tag-list">
+        <li>C++/CUDA</li>
+        <li>Embedded SoC Deployment</li>
+        <li>Real-Time Latency/Memory Optimisation</li>
+        <li>Regression Benchmarking</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="page-section reveal" id="projects">
+    <h2>Projects</h2>
+    <p class="section-hint">Click a project to expand details.</p>
+
+    <div class="project-grid">
+
+      <button class="project-card" type="button" aria-expanded="false">
+        <span class="project-thumb thumb-attention" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="16" r="3" fill="currentColor"/>
+            <circle cx="12" cy="32" r="3" fill="currentColor"/>
+            <circle cx="12" cy="48" r="3" fill="currentColor"/>
+            <circle cx="52" cy="24" r="3" fill="currentColor"/>
+            <circle cx="52" cy="40" r="3" fill="currentColor"/>
+            <path d="M12 16L52 24M12 16L52 40M12 32L52 24M12 32L52 40M12 48L52 24M12 48L52 40" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+          </svg>
+        </span>
+        <span class="project-body">
+          <span class="project-title">VLA-Based End-to-End Parking — Planning, Perception &amp; GRPO</span>
+          <span class="impact">Impact: VLA-driven scene reasoning and planning grounded in transformer-based perception (DETR / Deformable Attention) trained on 1M+ real-world annotations, refined with GRPO reinforcement learning.</span>
+          <span class="project-detail">Built a Vision-Language-Action pipeline that reasons over the driving
+          scene to make planning decisions, grounded by a transformer-based perception stack — including DETR
+          and Deformable-Attention detectors for parking-slot and general object detection — trained across a
+          large multi-task network on 1M+ annotated real-world scenes. Applied GRPO-based reinforcement-learning
+          post-training with custom reward shaping to refine planning quality beyond imitation learning,
+          alongside custom loss design, hard-negative mining, and quantization-aware training for embedded
+          deployment.</span>
+        </span>
+      </button>
+
+      <button class="project-card" type="button" aria-expanded="false">
+        <span class="project-thumb thumb-bezier" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 50 C 20 50, 14 14, 32 14 S 44 50, 58 50" stroke="currentColor" stroke-width="3" fill="none"/>
+            <circle cx="6" cy="50" r="3" fill="currentColor"/>
+            <circle cx="32" cy="14" r="3" fill="currentColor"/>
+            <circle cx="58" cy="50" r="3" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="project-body">
+          <span class="project-title">UniPark — Multi-Stroke Bézier Trajectory Planning</span>
+          <span class="impact">Impact: 0.135m final displacement error on 3,000+ real-world scenes, with zero-shot transfer to CARLA simulation.</span>
+          <span class="project-detail">Designed an object-query-centric BEV representation, replacing dense
+          BEV feature maps, paired with a multi-stroke Bézier trajectory decoder for kinematic continuity
+          across gear shifts.</span>
+        </span>
+      </button>
+
+      <button class="project-card" type="button" aria-expanded="false">
+        <span class="project-thumb thumb-bev" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="52" height="52" rx="4" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M6 22h52M6 38h52M22 6v52M38 6v52" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+            <rect x="26" y="26" width="12" height="12" rx="2" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="project-body">
+          <span class="project-title">BEV Multi-Camera Parking Perception</span>
+          <span class="impact">Impact: key perception metrics improved 5–10% across production parking-perception models.</span>
+          <span class="project-detail">Led development of multi-sensor BEV perception transformer models
+          (SimpleBEV, LSS, OFT, BEVFormer, GaussianLSS) fusing surround-view fisheye camera inputs. Designed
+          custom loss functions, hard-negative mining, and rotated/anchor-free polygonal object detectors for
+          irregularly shaped obstacles and parking slots. Deployed BEV-based detection networks in C++/CUDA
+          on embedded automotive platforms under real-time latency and memory constraints.</span>
+        </span>
+      </button>
+
+      <button class="project-card" type="button" aria-expanded="false">
+        <span class="project-thumb thumb-gaussian" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="26" r="10" fill="currentColor" opacity="0.55"/>
+            <circle cx="40" cy="20" r="7" fill="currentColor" opacity="0.75"/>
+            <circle cx="38" cy="40" r="12" fill="currentColor" opacity="0.4"/>
+            <circle cx="18" cy="44" r="6" fill="currentColor" opacity="0.85"/>
+          </svg>
+        </span>
+        <span class="project-body">
+          <span class="project-title">Thermal 3D Gaussian Splatting &amp; NeRF</span>
+          <span class="impact">Impact: first-author research extending thermal novel-view synthesis into a rasterization-free 3D Gaussian object detector achieving 32.2 mAP / 42.3 NDS on nuScenes.</span>
+          <span class="project-detail">Pioneered thermal-camera novel-view synthesis using NeRFs and Gaussian
+          Splatting, then extended the representation into a 3D Gaussian object-detection head with
+          Mahalanobis cross-attention.</span>
+        </span>
+      </button>
+
+      <button class="project-card" type="button" aria-expanded="false">
+        <span class="project-thumb thumb-lidar" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="18" y="16" width="28" height="32" rx="2" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="12" cy="14" r="2" fill="currentColor"/>
+            <circle cx="52" cy="18" r="2" fill="currentColor"/>
+            <circle cx="10" cy="34" r="2" fill="currentColor"/>
+            <circle cx="54" cy="42" r="2" fill="currentColor"/>
+            <circle cx="20" cy="52" r="2" fill="currentColor"/>
+            <circle cx="46" cy="54" r="2" fill="currentColor"/>
+            <circle cx="30" cy="10" r="2" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="project-body">
+          <span class="project-title">LiDAR 3D Object Detection</span>
+          <span class="impact">Impact: +12% pedestrian mAP via class-imbalance-aware training on large-scale autonomous-driving benchmarks.</span>
+          <span class="project-detail">Designed and improved LiDAR point cloud 3D object detection at scale
+          on KITTI, Waymo, and nuScenes in semi-supervised settings, extending PV-RCNN and CenterPoint.
+          Conducted dataset diagnostics and feature-space analysis (GMM, PCA, t-SNE), and built
+          self-supervised and contrastive representation-learning modules.</span>
+        </span>
+      </button>
+
+      <button class="project-card" type="button" aria-expanded="false">
+        <span class="project-thumb thumb-security" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="20" width="24" height="24" rx="2" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M28 20v-8M36 20v-8M28 52v-8M36 52v-8M20 28h-8M20 36h-8M44 28h8M44 36h8" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M27 32l3 4 7-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="project-body">
+          <span class="project-title">Bare-Metal Hypervisor Fuzzing</span>
+          <span class="impact">Impact: uncovered 5 vulnerabilities in a bare-metal hypervisor's OPC UA library.</span>
+          <span class="project-detail">Reverse-engineered ARM-based bare-metal hypervisors (Xen, Xvisor) and
+          fuzzed the OPC UA library using LibFuzzer/AFL++.</span>
+        </span>
+      </button>
+
+    </div>
+  </section>
+
+  <section class="page-section reveal" id="background">
+    <h2>Background</h2>
+
+    <div class="timeline">
+      <div class="job">
+        <h3>Senior Machine Learning Engineer <span class="job-dates">June 2024 – Present</span></h3>
+        <p class="job-org">Valeo — Galway, Ireland</p>
+        <ul>
+          <li>Lead algorithm developer on BEV multi-camera parking perception (see Projects above).</li>
+          <li>Coordinated algorithm development across multi-task and single-decoder settings with cross-functional perception teams, supporting sustained production delivery.</li>
+          <li>Delivered multi-task perception models (slot detection, obstacle segmentation, panoptic parsing) shipped in customer-facing production releases.</li>
+        </ul>
       </div>
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
+      <div class="job">
+        <h3>Research Assistant – 3D Perception <span class="job-dates">Oct 2022 – May 2024</span></h3>
+        <p class="job-org">German Research Center for Artificial Intelligence (DFKI) — Saarbrücken, Germany</p>
+        <ul>
+          <li>Designed and improved LiDAR point cloud 3D object detection systems on KITTI, Waymo, and nuScenes in semi-supervised settings; improved pedestrian mAP by 12%.</li>
+          <li>Developed self-supervised and contrastive representation-learning modules for 3D detection pipelines.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Research Assistant, Hypervisor Security <span class="job-dates">Jan 2023 – June 2023</span></h3>
+        <p class="job-org">CISPA Helmholtz Center for Information Security — Saarbrücken, Germany</p>
+        <ul>
+          <li>Reverse-engineered ARM-based bare-metal hypervisors and fuzzed the OPC UA library with LibFuzzer/AFL++, uncovering 5 vulnerabilities.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Software Development Intern <span class="job-dates">Jun 2022 – Aug 2022</span></h3>
+        <p class="job-org">HubSpot Inc — Berlin, Germany</p>
+        <ul>
+          <li>Shipped two features in HubSpot's Email Automation Product (React/JavaScript), reducing customer task time by 10%; wrote automated tests for 3 new features.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Technical Executive Engineer <span class="job-dates">Jun 2019 – Aug 2020</span></h3>
+        <p class="job-org">SEW EuroDrive India Pvt Ltd. — Chennai, India</p>
+        <ul>
+          <li>Automated technical planning generation (Python/IronPython) and designed control circuits and stability analysis (MATLAB) for Automated Guided Vehicles.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section reveal" id="publications">
+    <h2>Publications</h2>
+    <ul class="pub-list">
+      <li>
+        <strong>PGT-NeRF: Physics-Guided Thermal Neural Radiance Fields.</strong> VISAPP 2026.
+        <span class="pub-note">Physics-guided NeRF for thermal novel-view synthesis and 3D reconstruction from non-visible spectrum inputs.</span>
+      </li>
+      <li>
+        <strong>FisheyeGaussianLift: BEV Feature Lifting for Surround-View Fisheye Camera Perception.</strong> 2025.
+        <span class="pub-note">Gaussian-splatting-inspired BEV lifting preserving fisheye priors without reprojection artefacts.</span>
+      </li>
+    </ul>
+    <p class="pub-footnote">Patent application pending (2026), 3D scene reconstruction and view synthesis.</p>
+  </section>
+
+  <section class="page-section reveal" id="education">
+    <h2>Education</h2>
+    <ul class="edu-list">
+      <li><strong>MSc, Embedded Systems</strong> — Universität des Saarlandes, Saarbrücken, Germany <span class="job-dates">Nov 2020 – Dec 2023</span></li>
+      <li><strong>BTech, Electrical and Electronics Engineering</strong> — Anna University, Tamil Nadu, India <span class="job-dates">Aug 2015 – Apr 2019</span></li>
+    </ul>
+  </section>
+
+</article>
+
+<button class="back-to-top" type="button" aria-label="Back to top">&uarr;</button>
+
+<script>
+  document.querySelectorAll('.project-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var expanded = card.getAttribute('aria-expanded') === 'true';
+      card.setAttribute('aria-expanded', String(!expanded));
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      observer.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      el.classList.add('is-visible');
+    });
+  }
+
+  var backToTop = document.querySelector('.back-to-top');
+  window.addEventListener('scroll', function () {
+    backToTop.classList.toggle('is-visible', window.scrollY > 400);
+  });
+  backToTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
