@@ -161,8 +161,34 @@ img {
 	  font-size: smaller;
 	 margin-top: 0;
 	  margin-bottom: 10px;
-	
-}	
+
+}
+
+.entry table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 15px;
+}
+
+.entry table th,
+.entry table td {
+  padding: 10px 18px;
+  text-align: left;
+  border-bottom: 1px solid $lightGray;
+}
+
+.entry table th {
+  font-weight: bold;
+  border-bottom: 2px solid $gray;
+}
+
+.entry table td:not(:last-child),
+.entry table th:not(:last-child) {
+  border-right: 1px solid lighten($lightGray, 5%);
+}
+
 /*********************/
 /* LAYOUT / SECTIONS */
 /*********************/
